@@ -13,12 +13,21 @@ export class App extends Component {
   };
 
   onAddContact = newContact => {
-    this.state.contacts.filter(contact => contact.name === newContact.name)
-      .length
-      ? alert(`${newContact.name} is already in contacts.`)
-      : this.setState(prevState => ({
-          contacts: [...prevState.contacts, newContact],
-        }));
+    if (
+      this.state.contacts.find(
+        contact =>
+          contact.name.toLowerCase() === newContact.name.toLowerCase() ||
+          contact.number === newContact.number
+      )
+    ) {
+      return alert(
+        `${newContact.name} or ${newContact.number} is already in contacts.`
+      );
+    }
+
+    this.setState(prevState => ({
+      contacts: [...prevState.contacts, newContact],
+    }));
   };
 
   onGetContacts = () => {
