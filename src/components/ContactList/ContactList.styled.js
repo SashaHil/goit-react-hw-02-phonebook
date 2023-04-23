@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const List = styled.ul`
+export const ListItem = styled.li`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 10px;
+
+  margin-bottom: 10px;
+`;
+
+export const Name = styled.p`
+  font-weight: 650;
 `;

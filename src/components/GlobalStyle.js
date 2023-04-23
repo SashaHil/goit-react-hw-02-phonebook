@@ -12,6 +12,8 @@ body {
 
   padding-top: 30px;
   padding-bottom: 30px;
+
+  background-color: rgba(33, 243, 215, 0.6);
 }
 
 code {

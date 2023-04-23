@@ -1,21 +1,22 @@
+import { Button } from 'components/ContactForm/ContactForm.styled';
 import PropTypes from 'prop-types';
-import { List } from './ContactList.styled';
+import { ListItem, Name } from './ContactList.styled';
 
 export const ContactList = ({ contacts, onDelteContact }) => {
   return (
-    <List>
+    <ul>
       {contacts.map(({ id, name, number }) => {
         return (
-          <li key={id}>
-            <p>{name} </p>
+          <ListItem key={id}>
+            <Name>{name}: </Name>
             <p>{number} </p>
-            <button type="button" onClick={() => onDelteContact(id)}>
+            <Button type="button" onClick={() => onDelteContact(id)}>
               Delete
-            </button>
-          </li>
+            </Button>
+          </ListItem>
         );
       })}
-    </List>
+    </ul>
   );
 };
 

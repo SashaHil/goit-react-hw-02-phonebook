@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { Formik, Field } from 'formik';
+import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
-import { Form, ErrorMessage } from './ContactForm.styled';
+import { Form, ErrorMessage, Field, Button } from './ContactForm.styled';
 
 const InputSchema = Yup.object().shape({
   name: Yup.string().required('Must be required'),
@@ -42,7 +42,7 @@ export const ContactForm = ({ onAddContact }) => {
           required
         />
         <ErrorMessage name="number" component="div" />
-        <button type="submit">Add contact</button>
+        <Button type="submit">Add contact</Button>
       </Form>
     </Formik>
   );
